@@ -1,0 +1,4 @@
+main
+test_interpreter
+test_parser
+*.o

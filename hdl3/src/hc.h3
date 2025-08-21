@@ -1,0 +1,74 @@
+
+include "std.h3";
+
+class comp:
+var filename;
+var fileend;
+var filebuf;
+var fileptr;
+var ahead;
+var line;
+
+func error txt:
+	println "Error: ";
+	println txt;
+	exit -1;
+end;
+
+func next:
+	lt fileptr fileend; if true (
+		get fileptr;
+		loadb; set ahead;
+	) false (
+		set ahead -1;
+	);
+	eq ahead 10; if true (
+		add line 1; set line;
+	);
+	add fileptr 1; set fileptr;
+end;
+
+func process file:
+	class file f;
+	println "processing: ";
+	get file; tee filename;
+	println;
+
+	set line 1;
+	
+	get file;
+	f.size;
+	tee fileend;
+	itoa; println;
+
+	get fileend;
+	const 0;
+	get filename;
+	f.load;
+	tee filebuf;
+	tee fileptr;
+	add fileend; set fileend;
+
+	this.next;
+	loop (
+		lt ahead 1; if true ( break; );
+		itoa line; println;
+		this.next;		
+	);
+	!this.error "jml";
+	println "-------------";
+end;
+
+end class;
+
+
+func start argc,argv;ret:
+	class comp c;
+	get argv; load; println;
+	gt argc 1; if true (
+		sizeof comp; new; set c;
+		varadd argv 1; load;
+		c.process;
+	);
+	set ret 0;
+end;

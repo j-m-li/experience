@@ -1,0 +1,24 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/contrib": true
+      },
+      "search.exclude": {
+        "**/contrib": true
+      },
+      "files.associations": {
+        "xutility": "c",
+        "memory": "c",
+        "cstdlib": "c",
+        "initializer_list": "c",
+        "utility": "c",
+        "vector": "c",
+        "stdio.h": "c",
+        "klib.h": "c",
+        "internal.h": "c"
+      },
+      "edit.src": "../d/main.c ../d/edit.c ../d/tk.c ../d/tk_inline.c ../d/tk_style.c ../d/tk_block.c ../d/tk_text.c ../d/tk_range.c ../d/tk_widget.c",
+      "build.test": "\\\"-${config:edit.src}\\\" "
+      
+}

@@ -1,0 +1,242 @@
+
+! zeasm:   the programming language (reverse polish notation)
+! ! is comments (till the end of line)
+! only digits, lower case letters and ,;:.?!"()'-
+!
+! builtin function can return void, but regular functions always return a val 
+
+include "std.zea";
+
+! a module array of integer
+data ar 0,1,2,3,4,5,? ! ? skips blank characters and comments
+	6,7,8,9,?
+	10,11,12;
+
+!  module arrays of bytes 
+data bar '-abcdefghijklmno'; 	! eight bytes
+
+data str "abc";		! four bytes (strings are nul terminated)
+
+func: hello value,data;
+
+class myclass: 
+! fields
+var avalue;
+var arrr;
+var bptr;
+wire logic; 	! for hardware desciption language
+
+! methods
+func: dispose;
+func new:
+	sizeof myclass;
+	new;
+	set this;
+
+	new 1024; 
+	store this.arrr;
+	load this.arrr;
+	store this.bptr;  ! now arrr and bptr point to the same memory
+
+	return this; ! we return the value on the compute stack
+end;
+
+func dispose:
+	load this.arrr;
+	delete;
+	get this;
+	delete;
+	return 0;
+end;
+
+! recusive call while a is greater than zero
+func methoda a,b:
+	var aa;
+
+	sub a 1; ! add sub mul div rem
+
+	set aa;
+	gt aa 0; ! eq ne lt gt le ge
+	if true (
+		this.methoda aa b;
+		return;
+	);
+	return 0;
+end;
+
+end class; ! end of class myclass
+
+func start argc,argv:
+	class term t;
+	var tmp;	! a local variable (integer or pointer to data)
+	class myclass obj;	! a pointer to object of type "myclass"
+	var bs;		
+	class file fi;
+
+	obj.new;	! instantiate an object (this pointer is null) and push
+			! it to the stack
+	set obj; 	! get it and assign it
+
+	load obj.bptr;
+	set bs;
+	add bs 3;
+	set bs;
+	storeb bs 533; ! 512 plus 21, set byte three of obj.bptr to twenty-one
+
+	loadb bs;
+	set tmp;	      ! tmp equals  21
+	printv tmp;
+	println " equals 21 ?";
+
+	obj.methoda 15 -3; ! call method
+	drop;
+	store obj.avalue 1;
+	drop obj.dispose;	
+
+	gt argc 1;
+	if true (
+		println "too many arguments";
+	) false (
+		eq argc 1;
+		if true (
+			println "hello world";
+		) false (
+			println "panic";
+			exit -1;
+		);
+	);
+
+
+	! invert bit zero of argc
+	getb argc 0;
+	if true (
+		clrb argc 0;
+	) false (
+		setb argc 0;
+	);
+
+	!invert trit two of argc
+	gett argc 2;
+	if true (
+		minust argc 2;
+	) false (
+		plust argc 2;
+	) zero (
+		! zerot argc 2;
+	);
+
+
+	! numerical constants
+	drop mul 3 1000000000;
+	! this is equivalent
+	1000000000; ! const is optional
+	const 3;
+	mul;	
+	drop; ! throw away the result of the multiplication
+
+	1000000000;
+	3;
+	mul;
+	print "3 x 10000.. equals ";
+	printv;
+	println "";
+
+
+
+	set tmp "a string";
+	print "program name equals ";
+	println tmp;
+	! array access
+	varadd argv 0; 
+	load;
+	println;
+	gt argc 1;
+	if true (
+		print "arg1: ";
+		varadd argv 1; ! result is argv plus four
+		load;
+		println; 
+	);
+
+	set tmp 4;
+	loop (
+		sub tmp 1;
+		set tmp;
+		gt tmp 0;
+		if true (
+			continue;
+		) false (
+			break;
+		);
+		printv tmp;
+		println "";
+	);
+
+	set tmp 12345;
+	hello tmp " yo"; 
+	drop;
+
+	print '-m-j--';	! byte string. - is zero, a is one 
+			! binary : - abcde fghij klmno 
+			! m thirteen, o  fifteen, j ten
+		   	! we print  carriage return and new line characters
+			! balanced ternary : zyx wvuts rqpon - abcde fghij klm
+
+	set tmp " world";
+	"hello";
+	print;
+	println tmp;
+	set tmp '--';
+
+	set t 0;
+	t.new;
+	set t;
+	loop (
+		t.wait 10;
+		le 0; ! zero is less or equal t.wait return value
+		if true (
+			load t.evttype; 
+			if 1 (                       ! keyboard event
+				const 0;
+				load t.evtlength;
+				gt;
+				if true (
+					load t.evtdata;
+					load;
+					if 27 ( ! Escape key
+						break;
+					);
+					load t.evtdata;
+					print;
+				);	
+			);
+		) default (
+			!print "no event";
+		);
+		flush;	
+	);
+	
+	! skip the first 500 character of the file
+	500;
+	fi.size "file.h";
+	sub;
+	fi.load "file.h" 500;
+	print;
+
+	print "done!" '-j' "!" '-j';
+	flush;	
+	t.dispose;
+	exit -1;
+	return 0;
+end;
+
+! function definition
+func hello value,data:
+	println "the value of value is ";
+	printv value;
+	println data;
+	return 0;
+end;
+
+
+

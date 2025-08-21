@@ -1,0 +1,82 @@
+! h3:   the programming language (reverse polish notation)
+! ! is comments (till the end of line)
+! only digits, lower case letters and ,;:.?!"()'-
+!
+
+include "std.h3";
+
+func xor;
+
+func xor a,b;c:
+	get a; if true (
+		get b; if true (
+			set c 0;
+		) false (
+			set c 1;
+		);	
+	) false (
+		get b; if true (
+			set c 1;
+		) false (
+			set c 0;
+		);	
+	);
+end;
+
+class dff:
+var c;
+func always clk,d;q:
+	posedge clk; if true (
+		set c d;
+	); 
+	set q c;
+end; 
+end class;
+
+class main:
+var reg0..2;
+new dff dff;
+
+func always:
+	xor reg1..1 reg2..2; set reg1..1;
+	dff.always; set reg0..0;
+end;
+func  main argc,argv;ret:
+	var a0..9;
+	var b0..11;
+	set a0..9 0 0 0 0 0  0 0 0 0 0;
+	set b1..6 a0..5;
+	loop (
+		this.always;
+		const 0; if true (
+			continue;
+		) false (
+			break;
+		);
+	);
+	get argv; load;  println;
+	gt argc 1;
+	if true (
+		varadd argv 1; load; println;
+	);
+	! store add mul div rem sub
+	! gt lt eq ne ge le
+	println '-m-j--';	! byte string. - is zero, a is one 
+			! binary : - abcde fghij klmno 
+			! m thirteen, o  fifteen, j ten
+		   	! we print  carriage return and new line characters
+			! balanced ternary : zyx wvuts rqpon - abcde fghij klm
+	println "hello world"; ! text string
+	itoa 65; println; ! integer to string
+	set ret 0;
+end;
+end class;
+
+
+func start argc,argv;ret:
+	class main obj;
+	sizeof main; new; set obj; 
+	drop obj.main argc argv;
+	set ret 0;
+end;
+

@@ -1,0 +1,98 @@
+
+/* The authors disclaim copyright to this source code */
+ 
+
+body { 
+	color: #000000; 
+	line-height: 1.5; 
+	font-family: 
+		"Quicksand",
+		system-ui,
+  		-apple-system,
+  		"Segoe UI",
+  		Roboto,
+  		"Helvetica Neue", Arial,
+  		"Noto Sans",
+  		"Liberation Sans",
+  		sans-serif;
+	text-align:center; 
+	margin-right:0px; 
+	margin-left:0px;
+	border: 0px;
+	margin: 0px;
+}
+
+pre,code { 
+	font-family: 
+		Menlo, Monaco, 
+		"Courier New", 
+		monospace; 
+}
+
+sup {font-size: 50%; font-style: italic;}
+pre { padding: 2px; margin-right: auto;}
+p { margin-top: 16px; margin-bottom: 16px; 
+    margin-left: auto; margin-right:auto;
+}
+hr {	margin-top: 16px; margin-bottom: 48px; 
+	border-bottom: 0px; border-top: 2px; border-style: solid; 
+	border-color: #FF5050; width: 10%;
+}
+h1 { text-transform: uppercase;}
+h1, h2, h3 {text-align: center; color: #000000;}
+h2 { 	border-top: 0px; border-top-color:#7F8080; 
+	border-top-style: solid; padding-top:1px;
+}
+h3 {
+	margin-top:48px;
+}
+
+img {vertical-align: middle;}
+a {	text-decoration: none; color: #000000; 
+	text-shadow: 0.6px 0px 0.5px #000000, 
+	 	-0.6px 0px 0.5px #000000; 
+}
+a:hover {text-decoration: underline #5050FF; 
+	text-decoration-thickness:2px; color: #7F8080;
+}
+::selection {background-color: #50FF50;}
+li {margin-bottom: 8px;}
+ul {list-style-type: none;}
+
+button {display:inline-block;}
+
+@media screen and (min-width: 600px) {
+p {max-width: 60%;}
+}
+
+
+@media screen and (min-width: 960px) {
+body {font-size:120%;}
+}
+
+div.head {font-size:1.6vw;}
+
+.em100 {height: 1em; vertical-align: text-bottom;}
+
+.white {color: #FFFFFF;}
+.black {color: #000000;}
+.green {color: #50FF50;}
+.red {color: #FF5050;}
+.blue {color: #5050FF;}
+.yellow {color: #FFFF00; 
+	text-shadow: 0.6px 0px 0.5px #000000, 
+	 	0px 0.6px 0.5px #000000;
+}
+.gray {color: #7F8080;
+	text-shadow: 0.6px 0px 0.5px #000000, 
+	 	0px 0.6px 0.5px #000000;
+}
+.cyan {color: #7F8080;
+	text-shadow: 0.6px 0px 0.5px #000000, 
+	 	0px 0.6px 0.5px #000000;
+}
+.magenta {color: #FF00FF;
+	text-shadow: 0.6px 0px 0.5px #000000, 
+	 	0px 0.6px 0.5px #000000;
+}
+

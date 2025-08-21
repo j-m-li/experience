@@ -1,0 +1,110 @@
+{"I":[2,0,3]
+,"SampleData": 0 ,"SampleData": 36 ,
+ "LoopStart": "RemoteableDouble" ,
+ "LoopEnd": "RemoteableDouble" ,
+ "SampleOffset": "RemoteableDouble" ,
+ "HiddenLoopStart": "RemoteableDouble" ,
+ "HiddenLoopEnd": "RemoteableDouble" ,
+ "OutMarker": "RemoteableDouble" ,
+ "Sync": "RemoteableBool" ,
+ "HiQ": "RemoteableBool" ,
+ "Fade": "RemoteableBool" ,
+ "IsWarped": "RemoteableBool" ,
+ "SampleVolume": "UserFloat" ,
+ "VelocityAmount": "UserFloat" ,
+ "PitchCoarse": "UserFloat" ,
+ "PitchFine": "UserFloat" ,
+ "WarpMode": "RemoteableEnum" ,
+ "TransientResolution": "RemoteableEnum" ,
+ "GranularityTones": "UserFloat" ,
+ "GranularityTexture": "UserFloat" ,
+ "FluctuationTexture": "UserFloat" ,
+ "TransientLoopMode": "RemoteableEnum" ,
+ "TransientEnvelope": "UserFloat" ,
+ "ComplexProFormants": "UserFloat" ,
+ "ComplexProEnvelope": "UserFloat" ,
+ "TimeSignature": "RemoteableTimeSignature" ,
+ "ColorIndex": "RemoteableInt" ,
+ "WarpMarkers": "RemoteableList" ,
+ "MarkersGenerated": "RemoteableBool" ,
+ "LaunchMode": "RemoteableEnum" ,
+ "LoopOn": "RemoteableBool" ,
+ "LaunchQuantisation": "RemoteableEnum" ,
+ "OnSets": "OnSets" ,
+ "UserOnsets": "OnsetArray" ,
+ "AufTaktData": "AufTaktData" ,
+ "ExtraLength": "RemoteableInt" ,
+ "OriginalFileSize": "RemoteableInt" ,
+ "OverView": "SampleOverView" 
+ "List<SampleOverViewLevel>":  -1
+"TimeSignatureDenominator": 1
+"Value": 18
+"RemoteableDouble": 1
+"Value": 1
+"RemoteableBool": 1
+"Value": 1
+"TimeSignatureNumerator": 1
+"Value": 1
+"UserFloat": 1
+"Value": 1
+"RemoteableEnum": 1
+"Value": 1
+"RemoteableTimeSignature": 3
+"Numerator": 3
+"TimeSignatureNumerator": 0
+"Denominator": 0
+"TimeSignatureDenominator": 0
+"Time": 0
+"RemoteableDouble": 0
+"RemoteableInt": 1
+"Value": 1
+"RemoteableList": -1
+"OnSets": 4
+"Positions": 4
+"TransitionEnergies": 53
+"IsSet": 64
+"Version": 16
+"OnsetArray": 2
+"UserOnsets": 0
+"RemoteableArray": 13
+"HasUserOnsets": 0
+"RemoteableBool": 0
+"RemoteableArray": -3
+"OnsetEvent": 3[
+
+{"Time": 23 ,
+{"Energy": 23 ,
+{"IsVolatile": 16 ]
+
+"AufTaktData": 4[
+
+{"PreprocessedDataChunk": 49 ,
+{"UnbiasedTempoEstimate": 23 ,
+{"IsSet": 16 ,
+{"Version": 17 ]
+
+"SampleOverView": 4[
+
+{"OverViewLevels": 0 ,
+{"List<SampleOverViewLevel>": 17 ,
+{"SamplesPerBinLog2": 17 ,
+{"ChannelCount": 17 ,
+{"Version": 17 ]
+
+"SampleOverViewLevel": 1[
+
+{"InterleavedBinData": 50 MMMMM 150 2748
+, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 240, 65, 0, 0, 130, 66, 0, 0, 200, 65, 2, 0, 0, 0, 0, 0, 200, 66, 0, 0, 200, 66, 0, 0, 0, 67, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0i!! 0 !!  2905 ]
+
+"OnsetEvent": 0
+"SampleOverViewLevel": 0
+"": 7
+"AufTaktData": 1 AOOOO 2
+"AufTaktData": 4 AOOOO 3[
+
+{"PreprocessedDataChunk": 49 ,
+{"UnbiasedTempoEstimate": 23 ,
+{"IsSet": 16 ,
+{"Version": 17  SHIIII 0]
+
+}
